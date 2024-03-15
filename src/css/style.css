@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans: 100, 200, 300, 400, 500, 600, 700, 800, 900');
+
+:root
+{
+    /* Dark Theme Colors */
+    --dark-theme-background-color: #000105;
+    --dark-theme-text-color: #fff;
+    --dark-theme-name-text-color: #fc5316;
+    --dark-theme-button-background-color: #fff;
+    --dark-theme-button-text-color: #000105;
+    --dark-theme-icons-text-color: #000105;
+
+    /* Light Theme Colors */
+    --light-theme-background-color: #000105;
+    --light-theme-text-color: #fff;
+    --light-theme-name-text-color: #fc5316;
+    --light-theme-button-background-color: #000105;
+    --light-theme-button-text-color: #fff;
+    --dark-theme-icons-text-color: #fff;
+}
+
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+li
+{
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+}
