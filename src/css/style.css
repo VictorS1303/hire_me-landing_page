@@ -13,10 +13,18 @@
     /* Light Theme Colors */
     --light-theme-background-color: #000105;
     --light-theme-text-color: #fff;
+    --light-theme-link-color: #fc5316;
     --light-theme-name-text-color: #fc5316;
     --light-theme-button-background-color: #000105;
     --light-theme-button-text-color: #fff;
-    --dark-theme-icons-text-color: #fff;
+    --light-theme-icons-text-color: #fff;
+
+    /* Radii */
+    --base-border-radius: 10px;
+
+    /* Shadows */
+    --text-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
 body

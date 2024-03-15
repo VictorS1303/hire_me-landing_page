@@ -1,0 +1,151 @@
+<header>
+    <i class="fas fa-bars toggle-mobile-menu-btn" id="toggle_mobile_menu_btn"
+    ></i>
+    <nav class="main-nav" id="main_nav">
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Hire Me</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .toggle-mobile-menu-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 25px;
+        color: var(--light-theme-link-color);
+        cursor: pointer;
+        transition: right 0.4s ease-in;
+    }
+
+    .toggle-mobile-menu-btn.active {
+        right: 220px;
+    }
+
+    nav.active,
+    .toggle-mobile-menu-btn.active {
+        transition: right 0.4s ease-in;
+    }
+
+    nav {
+        display: grid;
+        place-content: center;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        height: 100vh;
+        width: 200px;
+        border-left: 2px solid #fc5316;
+        box-shadow: var(--box-shadow);
+        transition: right 0.4s ease-in;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        position: relative;
+        left: 40%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        position: relative;
+        color: var(--light-theme-link-color);
+        text-transform: uppercase;
+    }
+
+    nav ul li a.active {
+        border-bottom: 2px solid var(--light-theme-link-color);
+    }
+
+    nav ul li a::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        width: 0;
+        border-bottom: 2px solid var(--light-theme-link-color);
+        transition: width 0.2s ease-in;
+    }
+
+    nav ul li a:not(.active):hover::before {
+        width: 100%;
+        transition: width 0.2s ease-in;
+    }
+
+    @media screen and (min-width: 768px) {
+        .toggle-mobile-menu-btn {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 120px;
+            border: none;
+            box-shadow: none;
+        }
+
+        nav ul {
+            margin-right: 150px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 30px;
+        }
+    }
+</style>
+
+<script>
+    const mobileMenuToggleBtn = document.querySelector(
+        "#toggle_mobile_menu_btn"
+    );
+
+    const mainNav = document.querySelector("#main_nav");
+
+    // EVENT LISTENERS //
+    mobileMenuToggleBtn.addEventListener("click", toggleMobileMenu);
+
+    // FUNCTIONS //
+    function toggleMobileMenu() {
+        mobileMenuToggleBtn.classList.toggle("active");
+        mainNav.classList.toggle("active");
+
+        updateMobileMenuToggleBtnIcon();
+    }
+
+    function updateMobileMenuToggleBtnIcon() {
+        if (mobileMenuToggleBtn.classList.contains("active")) {
+            mobileMenuToggleBtn.classList.remove("fa-bars");
+            mobileMenuToggleBtn.classList.add("fa-times");
+        } else {
+            mobileMenuToggleBtn.classList.add("fa-bars");
+            mobileMenuToggleBtn.classList.remove("fa-times");
+        }
+    }
+</script>
